@@ -1,0 +1,17 @@
+{
+	"name": "airflow-clevercloud",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"build": "./build.sh",
+		"start": "./run.sh",
+		"flower": "./run.sh  celery flower",
+		"kerberos": "./run.sh kerberos",
+		"scheduler": "./run.sh scheduler",
+		"webserver": "./run.sh webserver",
+		"worker": "./run.sh celery worker",
+		"http": "./http.sh"
+	},
+	"author": "",
+	"license": "ISC"
+}
