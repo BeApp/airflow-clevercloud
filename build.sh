@@ -14,8 +14,10 @@ source env/bin/activate
 [ -z "$POSTGRESQL_ADDON_URI" ] && export POSTGRESQL_ADDON_URI="sqlite:///${AIRFLOW_HOME}/airflow.db"
 [ -z "$SQL_ALCHEMY_POOL_SIZE" ] && export SQL_ALCHEMY_POOL_SIZE=2
 [ -z "$BROKER_URL" ] && export BROKER_URL="redis://redis:6379/0"
+[ -z "$REMOTE_BASE_LOG_FOLDER" ] && export REMOTE_BASE_LOG_FOLDER="s3://airflow-logs?endpoint_url=https://cellar-c2.services.clever-cloud.com"
+[ -z "$REMOTE_LOG_CONN_ID" ] && export REMOTE_LOG_CONN_ID="s3_logs_conn"
 
 PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
 CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
-pip install "apache-airflow[postgres,celery,elasticsearch,redis]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+pip install "apache-airflow[postgres,celery,elasticsearch,redis,amazon]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"

@@ -14,6 +14,8 @@ source env/bin/activate
 [ -z "$POSTGRESQL_ADDON_URI" ] && export POSTGRESQL_ADDON_URI="sqlite:///${AIRFLOW_HOME}/airflow.db"
 [ -z "$SQL_ALCHEMY_POOL_SIZE" ] && export SQL_ALCHEMY_POOL_SIZE=2
 [ -z "$BROKER_URL" ] && export BROKER_URL="redis://redis:6379/0"
+[ -z "$REMOTE_BASE_LOG_FOLDER" ] && export REMOTE_BASE_LOG_FOLDER="s3://airflow-logs?endpoint_url=https://cellar-c2.services.clever-cloud.com"
+[ -z "$REMOTE_LOG_CONN_ID" ] && export REMOTE_LOG_CONN_ID="s3_logs_conn"
 
 mkdir -p ${AIRFLOW_HOME}
 envsubst < config/airflow.cfg > ${AIRFLOW_HOME}/airflow.cfg
