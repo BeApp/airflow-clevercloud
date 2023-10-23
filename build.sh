@@ -9,7 +9,7 @@ source env/bin/activate
 [ -z "$AIRFLOW_HOME" ] && export AIRFLOW_HOME="${APP_HOME}/home"
 [ -z "$AIRFLOW_DAGS" ] && export AIRFLOW_DAGS="${APP_HOME}/dags"
 [ -z "$AIRFLOW_PLUGINS" ] && export AIRFLOW_PLUGINS="${APP_HOME}/plugins"
-[ -z "$AIRFLOW_VERSION" ] && export AIRFLOW_VERSION="2.2.3"
+[ -z "$AIRFLOW_VERSION" ] && export AIRFLOW_VERSION="2.7.2"
 [ -z "$AIRFLOW_EXECUTOR" ] && export AIRFLOW_EXECUTOR="SequentialExecutor"
 [ -z "$POSTGRESQL_ADDON_URI" ] && export POSTGRESQL_ADDON_URI="sqlite:///${AIRFLOW_HOME}/airflow.db"
 [ -z "$SQL_ALCHEMY_POOL_SIZE" ] && export SQL_ALCHEMY_POOL_SIZE=2
