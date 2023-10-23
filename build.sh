@@ -3,7 +3,7 @@
 set -e
 set -x
 
-python3.9 -m venv env
+python3 -m venv env
 source env/bin/activate
 [ -z "$APP_HOME" ] && export APP_HOME=$(pwd)
 [ -z "$AIRFLOW_HOME" ] && export AIRFLOW_HOME="${APP_HOME}/home"
