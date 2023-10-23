@@ -1,5 +1,7 @@
 # Airflow on Clever Cloud
 
+Instructions copied and adjusted from the [original blog article](https://blog.kalvad.com/apache-airflow-on-clever-cloud/)
+
 # Setup
 
 ## Add-ons
